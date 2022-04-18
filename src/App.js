@@ -11,6 +11,7 @@ import About from './Pages/About/About';
 import Attorney from './Pages/Home/Attorney/Attorney';
 import Footer from './Pages/Shared/Footer/Footer';
 import Blogs from './Pages/Shared/Blogs/Blogs';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         }></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
 
       </Routes>
       <Footer></Footer>
