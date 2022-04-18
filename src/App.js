@@ -10,6 +10,7 @@ import Login from './Pages/Login/Login/Login';
 import About from './Pages/About/About';
 import Attorney from './Pages/Home/Attorney/Attorney';
 import Footer from './Pages/Shared/Footer/Footer';
+import Blogs from './Pages/Shared/Blogs/Blogs';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/attorney' element={<Attorney></Attorney>}></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/checkout' element={
           <RequireAuth>
            <CheckOut></CheckOut>
