@@ -12,6 +12,7 @@ import Attorney from './Pages/Home/Attorney/Attorney';
 import Footer from './Pages/Shared/Footer/Footer';
 import Blogs from './Pages/Shared/Blogs/Blogs';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+import Services from './Pages/Home/Services/Services';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/attorney' element={<Attorney></Attorney>}></Route>
+        <Route path='/services' element={<Services></Services>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/checkout' element={
