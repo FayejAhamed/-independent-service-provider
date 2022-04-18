@@ -1,0 +1,23 @@
+[
+  {
+    "id": "625bdecfac9af105a7c7a3b6",
+    "price": 500,
+    "picture": "https://img.freepik.com/free-photo/mature-male-lawyer-reading-book-with-gavel-justice-statue-wooden-table_23-2147898297.jpg?t=st=1650188389~exp=1650188989~hmac=eaaec6f9d218b88840e60db711f942138db2db8f934d4698e87823634b6d4d9f&w=996",
+    "name": "Alana Fischer",
+    "about": "Enim Lorem occaecat quis elit deserunt deserunt dolor ipsum ullamco enim Lorem ea et elit. Et excepteur non .\r\n"
+  },
+  {
+    "id": "625bdecff410a1789f63aed7",
+    "price": 900,
+    "picture": "https://img.freepik.com/free-photo/mature-male-lawyer-reading-book-with-gavel-justice-statue-wooden-table_23-2147898297.jpg?t=st=1650188389~exp=1650188989~hmac=eaaec6f9d218b88840e60db711f942138db2db8f934d4698e87823634b6d4d9f&w=996",
+    "name": "Ramirez Rodgers",
+    "about": "Occaecat reprehenderit voluptate consectetur do cillum dolor tempor. Amet esse dolore esse irure officia sit magna.\r\n"
+  },
+  {
+    "id": "625bdecfa031ca1a6a2fa9e5",
+    "price": 1190,
+    "picture": "https://img.freepik.com/free-photo/mature-male-lawyer-reading-book-with-gavel-justice-statue-wooden-table_23-2147898297.jpg?t=st=1650188389~exp=1650188989~hmac=eaaec6f9d218b88840e60db711f942138db2db8f934d4698e87823634b6d4d9f&w=996",
+    "name": "Jewell Taylor",
+    "about": "r consequat nisi eu. Ea non enim Lorem aliqua reprehenderit ullamco minim ipsum enim nisi mollit aliqua duis.\r\n"
+  }
+]
