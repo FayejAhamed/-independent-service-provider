@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 
-const Register = () => { 
+const Register = () => {
     const [errorRegister, setErrorRegister] = useState('')
-   
+
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-      const navigate = useNavigate();
-      let errorElement;
-      
-    if(loading ){
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+
+    let errorElement;
+
+    if (loading) {
         return <Loading></Loading>
     }
     if (error) {
@@ -26,35 +30,32 @@ const Register = () => {
                 <p className='text-danger'>Error: {error?.message}
                 </p>
             </div>
-        
+
     }
 
-    
-    const handleRegisterSubmit = async event =>{
-      
-            event.preventDefault();
-            const name = event.target.name.value;
-            const email = event.target.email.value;
-            const password = event.target.password.value;
-            const confirmPassword = event.target.confirmPassword.value;
-            // const agree = event.target.terms.checked;
-         
-        if(password === confirmPassword){
-            await createUserWithEmailAndPassword(email, password)
-          
-        }
-        if(password !== confirmPassword){
-             setErrorRegister('password not match');
+
+    const handleRegisterSubmit = async event => {
+
+        event.preventDefault();
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        const confirmPassword = event.target.confirmPassword.value;
+        // const agree = event.target.terms.checked;
+
+        if (password === confirmPassword) {
+            await createUserWithEmailAndPassword(email, password);
+            navigate(from);
 
         }
-        if(user){
-            navigate('/home')
+        if (password !== confirmPassword) {
+            setErrorRegister('password not match');
+
         }
-    
-    
-        }
-      
-    
+
+    }
+
+   
 
 
     return (
@@ -63,11 +64,11 @@ const Register = () => {
             <Form onSubmit={handleRegisterSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Your Name</Form.Label>
-                    <Form.Control name='name' type="text" placeholder="Enter name"  required/>
+                    <Form.Control name='name' type="text" placeholder="Enter name" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control name='email' type="email" placeholder="Enter email"  required/>
+                    <Form.Control name='email' type="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -78,12 +79,12 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control name='confirmPassword' type="password" placeholder="Confirm Password" required />
                 </Form.Group>
-               
-              <div>
-              <Button className='w-100' variant="primary" type="submit">
-                    Register
-                </Button>
-              </div>
+
+                <div>
+                    <Button className='w-100' variant="primary" type="submit">
+                        Register
+                    </Button>
+                </div>
             </Form>
             <p className='text-danger text center'>{errorRegister}</p>
             {errorElement}
