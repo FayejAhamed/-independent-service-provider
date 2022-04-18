@@ -21,7 +21,7 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/checkout' element={
           <RequireAuth>
-            <CheckOut></CheckOut>
+           <CheckOut></CheckOut>
           </RequireAuth>
         }></Route>
         <Route path='/register' element={<Register></Register>}></Route>
