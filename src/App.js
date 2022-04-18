@@ -9,6 +9,7 @@ import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import Login from './Pages/Login/Login/Login';
 import About from './Pages/About/About';
 import Attorney from './Pages/Home/Attorney/Attorney';
+import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
 
       </Routes>
+      <Footer></Footer>
 
     </div>
   );
