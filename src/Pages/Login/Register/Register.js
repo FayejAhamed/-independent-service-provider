@@ -42,10 +42,11 @@ const Register = () => {
         const password = event.target.password.value;
         const confirmPassword = event.target.confirmPassword.value;
         // const agree = event.target.terms.checked;
-
+        // checkin the validity
         if (password === confirmPassword) {
             await createUserWithEmailAndPassword(email, password);
-            navigate(from);
+            navigate('/checkout')
+
 
         }
         if (password !== confirmPassword) {
@@ -53,9 +54,10 @@ const Register = () => {
 
         }
 
+
     }
 
-   
+
 
 
     return (
