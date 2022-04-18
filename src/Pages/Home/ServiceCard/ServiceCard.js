@@ -7,7 +7,7 @@ const ServiceCard = ({ service }) => {
     // console.log(name)
     return (
         <div className='col-lg-4'>
-            <Card>
+            <Card className='border-0 shadow-sm rounded-2'  style={{ width: '18rem'}}>
                 <Card.Img className='w-50 h-25 mx-auto' variant="top" src={picture} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
@@ -16,7 +16,7 @@ const ServiceCard = ({ service }) => {
                     </Card.Text>
                     <h5>${price}</h5>
                 </Card.Body>
-              <div className='mx-auto'>
+              <div className='mx-auto' >
                    <Link to="/checkout"><button className='px-5 my-3 py-2 bg-dark text-white rounded-2'>Learn more</button></Link>
                    </div>
             </Card>
